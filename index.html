@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>kalkulator sederhana</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <div class="container">
+      <div class="kalkulator">
+        <input type="text" placeholder="0" id="inputbox" />
+        <div>
+          <button class="main" onclick="clearAll()">AC</button>
+          <button class="main" onclick="clearChart()">DE</button>
+          <button class="operator" onclick="appendToDisplay('%')">%</button>
+          <button class="operator" onclick="appendToDisplay('/')">/</button>
+        </div>
+        <div>
+          <button onclick="appendToDisplay('7')">7</button>
+          <button onclick="appendToDisplay('8')">8</button>
+          <button onclick="appendToDisplay('9')">9</button>
+          <button class="operator" onclick="appendToDisplay('*')">x</button>
+        </div>
+        <div>
+          <button onclick="appendToDisplay('4')">4</button>
+          <button onclick="appendToDisplay('5')">5</button>
+          <button onclick="appendToDisplay('6')">6</button>
+          <button class="operator" onclick="appendToDisplay('+')">+</button>
+        </div>
+        <div>
+          <button onclick="appendToDisplay('1')">1</button>
+          <button onclick="appendToDisplay('2')">2</button>
+          <button onclick="appendToDisplay('3')">3</button>
+          <button class="operator" onclick="appendToDisplay('-')">-</button>
+        </div>
+        <div>
+          <button onclick="appendToDisplay('0')">0</button>
+          <button onclick="appendToDisplay('.')">.</button>
+          <button class="hasil" onclick="calculator('=')">=</button>
+        </div>
+      </div>
+    </div>
+    <script src="main.js">
+      </script>
+    
+      <script>
+        let tampilan = document.getElementById('inputbox');
+
+        function calculator() {
+          try {
+            tampilan.value = eval(tampilan.value);
+          } catch (error) {
+            tampilan.value = 'error';
+          }
+          
+        }
+  function clearAll() {
+    tampilan.value = '';
+      }
+
+
+    function clearChart() {
+      let deleteChart = tampilan.value;
+
+      tampilan.value = deleteChart.slice(0, -1);
+    }
+
+    function appendToDisplay(value) {
+      tampilan.value += value;
+    }
+      </script>
+    </type=>
+  </body>
+</html>
